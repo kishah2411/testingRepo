@@ -1,0 +1,777 @@
+{
+    "meta": {
+        "type": "db",
+        "canSave": true,
+        "canEdit": true,
+        "canAdmin": true,
+        "canStar": true,
+        "slug": "indiatest",
+        "url": "/d/O2HtTnjMk/indiatest",
+        "expires": "0001-01-01T00:00:00Z",
+        "created": "2021-05-07T11:40:01+05:30",
+        "updated": "2021-05-07T18:41:00+05:30",
+        "updatedBy": "admin",
+        "createdBy": "Anonymous",
+        "version": 4,
+        "hasAcl": false,
+        "isFolder": false,
+        "folderId": 0,
+        "folderTitle": "General",
+        "folderUrl": "",
+        "provisioned": false,
+        "provisionedExternalId": ""
+    },
+    "dashboard": {
+        "annotations": {
+            "list": [
+                {
+                    "builtIn": 1,
+                    "datasource": "-- Grafana --",
+                    "enable": true,
+                    "hide": true,
+                    "iconColor": "rgba(0, 211, 255, 1)",
+                    "name": "Annotations & Alerts",
+                    "type": "dashboard"
+                }
+            ]
+        },
+        "description": "testing- India",
+        "editable": true,
+        "gnetId": null,
+        "graphTooltip": 1,
+        "id": null,
+        "iteration": 1620393038299,
+        "links": [],
+        "panels": [
+            {
+                "aliasColors": {},
+                "bars": false,
+                "dashLength": 10,
+                "dashes": false,
+                "datasource": "my2",
+                "fieldConfig": {
+                    "defaults": {
+                        "links": []
+                    },
+                    "overrides": []
+                },
+                "fill": 0,
+                "fillGradient": 0,
+                "gridPos": {
+                    "h": 8,
+                    "w": 14,
+                    "x": 0,
+                    "y": 0
+                },
+                "hiddenSeries": false,
+                "id": 3,
+                "legend": {
+                    "avg": false,
+                    "current": false,
+                    "max": false,
+                    "min": false,
+                    "show": true,
+                    "total": false,
+                    "values": false
+                },
+                "lines": true,
+                "linewidth": 3,
+                "nullPointMode": "null",
+                "options": {
+                    "alertThreshold": true
+                },
+                "percentage": false,
+                "pluginVersion": "7.5.5",
+                "pointradius": 6,
+                "points": true,
+                "renderer": "flot",
+                "seriesOverrides": [
+                    {
+                        "alias": "sum(totale_casi)",
+                        "color": "#E0B400"
+                    }
+                ],
+                "spaceLength": 10,
+                "stack": false,
+                "steppedLine": false,
+                "targets": [
+                    {
+                        "format": "time_series",
+                        "group": [],
+                        "metricColumn": "denominazione_regione",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  date_add(data, interval 18 hour) AS \"time\",\n  sum(totale_casi)\nFROM covid19.province\ngroup by data\nORDER BY data",
+                        "refId": "A",
+                        "select": [
+                            [
+                                {
+                                    "params": [
+                                        "value"
+                                    ],
+                                    "type": "column"
+                                }
+                            ]
+                        ],
+                        "table": "covid19.province",
+                        "timeColumn": "data",
+                        "where": []
+                    }
+                ],
+                "thresholds": [],
+                "timeFrom": null,
+                "timeRegions": [
+                    {
+                        "colorMode": "gray",
+                        "fill": true,
+                        "fillColor": "rgba(234, 112, 112, 0.12)",
+                        "fromDayOfWeek": 6,
+                        "line": false,
+                        "lineColor": "rgba(237, 46, 24, 0.60)",
+                        "op": "time",
+                        "toDayOfWeek": 7
+                    }
+                ],
+                "timeShift": null,
+                "title": "National trend",
+                "tooltip": {
+                    "shared": true,
+                    "sort": 0,
+                    "value_type": "individual"
+                },
+                "type": "graph",
+                "xaxis": {
+                    "buckets": null,
+                    "mode": "time",
+                    "name": null,
+                    "show": true,
+                    "values": []
+                },
+                "yaxes": [
+                    {
+                        "format": "none",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    },
+                    {
+                        "format": "short",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    }
+                ],
+                "yaxis": {
+                    "align": false,
+                    "alignLevel": null
+                }
+            },
+            {
+                "circleMaxSize": 30,
+                "circleMinSize": 2,
+                "colors": [
+                    "#73BF69",
+                    "rgba(237, 129, 40, 0.89)",
+                    "#F2495C"
+                ],
+                "datasource": "my2",
+                "decimals": 0,
+                "esMetric": "Count",
+                "fieldConfig": {
+                    "defaults": {},
+                    "overrides": []
+                },
+                "gridPos": {
+                    "h": 22,
+                    "w": 10,
+                    "x": 14,
+                    "y": 0
+                },
+                "hideEmpty": false,
+                "hideZero": false,
+                "id": 5,
+                "initialZoom": "6",
+                "locationData": "table",
+                "mapCenter": "custom",
+                "mapCenterLatitude": "43",
+                "mapCenterLongitude": "12",
+                "maxDataPoints": 1,
+                "mouseWheelZoom": false,
+                "showLegend": true,
+                "stickyLabels": false,
+                "tableQueryOptions": {
+                    "geohashField": "geohash",
+                    "labelField": "denominazione_provincia",
+                    "latitudeField": "latitude",
+                    "longitudeField": "longitude",
+                    "metricField": "tot",
+                    "queryType": "coordinates"
+                },
+                "targets": [
+                    {
+                        "format": "table",
+                        "group": [],
+                        "metricColumn": "none",
+                        "rawQuery": true,
+                        "rawSql": "SELECT \n  longitude, latitude, denominazione_provincia, max(totale_casi) as tot\nFROM covid19.province\nwhere longitude<>0\n  and  $__timeFilter(data)\ngroup by longitude, latitude, denominazione_provincia\norder by longitude, latitude, denominazione_provincia",
+                        "refId": "A",
+                        "select": [
+                            [
+                                {
+                                    "params": [
+                                        "codice_regione"
+                                    ],
+                                    "type": "column"
+                                }
+                            ]
+                        ],
+                        "table": "covid19.province",
+                        "timeColumn": "data",
+                        "where": []
+                    }
+                ],
+                "thresholds": "10,100",
+                "timeFrom": null,
+                "timeShift": null,
+                "transparent": true,
+                "type": "grafana-worldmap-panel",
+                "unitPlural": "",
+                "unitSingle": "",
+                "valueName": "total"
+            },
+            {
+                "aliasColors": {},
+                "bars": false,
+                "dashLength": 10,
+                "dashes": false,
+                "datasource": "my2",
+                "fieldConfig": {
+                    "defaults": {
+                        "links": []
+                    },
+                    "overrides": []
+                },
+                "fill": 0,
+                "fillGradient": 0,
+                "gridPos": {
+                    "h": 8,
+                    "w": 14,
+                    "x": 0,
+                    "y": 8
+                },
+                "hiddenSeries": false,
+                "id": 10,
+                "legend": {
+                    "avg": false,
+                    "current": false,
+                    "max": false,
+                    "min": false,
+                    "show": true,
+                    "total": false,
+                    "values": false
+                },
+                "lines": true,
+                "linewidth": 3,
+                "nullPointMode": "null",
+                "options": {
+                    "alertThreshold": true
+                },
+                "percentage": false,
+                "pluginVersion": "7.5.5",
+                "pointradius": 6,
+                "points": true,
+                "renderer": "flot",
+                "seriesOverrides": [
+                    {
+                        "alias": "sum(totale_casi)",
+                        "color": "#E0B400"
+                    }
+                ],
+                "spaceLength": 10,
+                "stack": false,
+                "steppedLine": false,
+                "targets": [
+                    {
+                        "format": "time_series",
+                        "group": [],
+                        "metricColumn": "denominazione_regione",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  date_add(data, interval 18 hour) AS \"time\",\n  sum(totale_casi)\nFROM covid19.province\ngroup by data\nORDER BY data",
+                        "refId": "A",
+                        "select": [
+                            [
+                                {
+                                    "params": [
+                                        "value"
+                                    ],
+                                    "type": "column"
+                                }
+                            ]
+                        ],
+                        "table": "covid19.province",
+                        "timeColumn": "data",
+                        "where": []
+                    }
+                ],
+                "thresholds": [],
+                "timeFrom": null,
+                "timeRegions": [
+                    {
+                        "colorMode": "gray",
+                        "fill": true,
+                        "fillColor": "rgba(234, 112, 112, 0.12)",
+                        "fromDayOfWeek": 6,
+                        "line": false,
+                        "lineColor": "rgba(237, 46, 24, 0.60)",
+                        "op": "time",
+                        "toDayOfWeek": 7
+                    }
+                ],
+                "timeShift": null,
+                "title": "National trend COPY For Testing",
+                "tooltip": {
+                    "shared": true,
+                    "sort": 0,
+                    "value_type": "individual"
+                },
+                "type": "graph",
+                "xaxis": {
+                    "buckets": null,
+                    "mode": "time",
+                    "name": null,
+                    "show": true,
+                    "values": []
+                },
+                "yaxes": [
+                    {
+                        "format": "none",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    },
+                    {
+                        "format": "short",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    }
+                ],
+                "yaxis": {
+                    "align": false,
+                    "alignLevel": null
+                }
+            },
+            {
+                "datasource": "my2",
+                "fieldConfig": {
+                    "defaults": {
+                        "mappings": [],
+                        "thresholds": {
+                            "mode": "absolute",
+                            "steps": [
+                                {
+                                    "color": "green",
+                                    "value": null
+                                },
+                                {
+                                    "color": "#EAB839",
+                                    "value": 100
+                                },
+                                {
+                                    "color": "red",
+                                    "value": 1000
+                                }
+                            ]
+                        }
+                    },
+                    "overrides": []
+                },
+                "gridPos": {
+                    "h": 7,
+                    "w": 14,
+                    "x": 0,
+                    "y": 16
+                },
+                "id": 9,
+                "options": {
+                    "displayMode": "lcd",
+                    "orientation": "vertical",
+                    "reduceOptions": {
+                        "calcs": [
+                            "mean"
+                        ],
+                        "fields": "",
+                        "values": true
+                    },
+                    "showUnfilled": true,
+                    "text": {}
+                },
+                "pluginVersion": "7.5.5",
+                "targets": [
+                    {
+                        "format": "time_series",
+                        "group": [],
+                        "metricColumn": "denominazione_regione",
+                        "rawQuery": true,
+                        "rawSql": "select date_add(time1, interval 1 day) as \"time\", sum2-sum1 Delta\n  from (SELECT data AS \"time1\", sum(totale_casi) AS sum1 FROM covid19.province group by data) a,\n       (SELECT date_sub(data, interval 1 day) AS \"time2\", sum(totale_casi) AS sum2 FROM covid19.province group by data) b\n where time1=time2\n union \n select STR_TO_DATE('2020-02-24', '%Y-%m-%d'), 0\n  order by 1",
+                        "refId": "A",
+                        "select": [
+                            [
+                                {
+                                    "params": [
+                                        "value"
+                                    ],
+                                    "type": "column"
+                                }
+                            ]
+                        ],
+                        "table": "covid19.province",
+                        "timeColumn": "data",
+                        "where": []
+                    }
+                ],
+                "timeFrom": null,
+                "timeShift": null,
+                "title": "Differential (new infections)",
+                "type": "bargauge"
+            },
+            {
+                "datasource": "my2",
+                "fieldConfig": {
+                    "defaults": {},
+                    "overrides": []
+                },
+                "gridPos": {
+                    "h": 1,
+                    "w": 10,
+                    "x": 14,
+                    "y": 22
+                },
+                "id": 8,
+                "links": [],
+                "options": {
+                    "content": "<a href=\"https://github.com/meob/my2Collector\">Github</a>",
+                    "mode": "html"
+                },
+                "pluginVersion": "7.5.5",
+                "targets": [
+                    {
+                        "format": "time_series",
+                        "group": [],
+                        "metricColumn": "none",
+                        "rawQuery": false,
+                        "rawSql": "SELECT\n  c1 AS \"time\",\n  v1\nFROM mylog\nWHERE\n  $__timeFilter(c1)\nORDER BY c1",
+                        "refId": "A",
+                        "select": [
+                            [
+                                {
+                                    "params": [
+                                        "v1"
+                                    ],
+                                    "type": "column"
+                                }
+                            ]
+                        ],
+                        "table": "mylog",
+                        "timeColumn": "c1",
+                        "timeColumnType": "timestamp",
+                        "where": [
+                            {
+                                "name": "$__timeFilter",
+                                "params": [],
+                                "type": "macro"
+                            }
+                        ]
+                    }
+                ],
+                "title": "Datasource: https://github.com/pcm-dpc/COVID-19",
+                "transparent": true,
+                "type": "text"
+            },
+            {
+                "aliasColors": {},
+                "bars": false,
+                "dashLength": 10,
+                "dashes": false,
+                "datasource": "my2",
+                "fieldConfig": {
+                    "defaults": {
+                        "links": []
+                    },
+                    "overrides": []
+                },
+                "fill": 1,
+                "fillGradient": 0,
+                "gridPos": {
+                    "h": 8,
+                    "w": 7,
+                    "x": 0,
+                    "y": 23
+                },
+                "hiddenSeries": false,
+                "id": 2,
+                "legend": {
+                    "avg": false,
+                    "current": false,
+                    "max": false,
+                    "min": false,
+                    "show": true,
+                    "total": false,
+                    "values": false
+                },
+                "lines": true,
+                "linewidth": 1,
+                "nullPointMode": "null",
+                "options": {
+                    "alertThreshold": true
+                },
+                "percentage": false,
+                "pluginVersion": "7.5.5",
+                "pointradius": 2,
+                "points": false,
+                "renderer": "flot",
+                "seriesOverrides": [],
+                "spaceLength": 10,
+                "stack": true,
+                "steppedLine": false,
+                "targets": [
+                    {
+                        "format": "time_series",
+                        "group": [],
+                        "metricColumn": "denominazione_regione",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  date_add(data, interval 18 hour) AS \"time\",\n  denominazione_regione AS metric,\n  sum(totale_casi)\nFROM covid19.province\ngroup by denominazione_regione, data\nORDER BY data, denominazione_regione",
+                        "refId": "A",
+                        "select": [
+                            [
+                                {
+                                    "params": [
+                                        "value"
+                                    ],
+                                    "type": "column"
+                                }
+                            ]
+                        ],
+                        "table": "covid19.province",
+                        "timeColumn": "data",
+                        "where": []
+                    }
+                ],
+                "thresholds": [],
+                "timeFrom": null,
+                "timeRegions": [],
+                "timeShift": null,
+                "title": "Infected by Region",
+                "tooltip": {
+                    "shared": true,
+                    "sort": 0,
+                    "value_type": "individual"
+                },
+                "type": "graph",
+                "xaxis": {
+                    "buckets": null,
+                    "mode": "time",
+                    "name": null,
+                    "show": true,
+                    "values": []
+                },
+                "yaxes": [
+                    {
+                        "format": "none",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    },
+                    {
+                        "format": "short",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    }
+                ],
+                "yaxis": {
+                    "align": false,
+                    "alignLevel": null
+                }
+            },
+            {
+                "aliasColors": {},
+                "bars": false,
+                "dashLength": 10,
+                "dashes": false,
+                "datasource": "my2",
+                "fieldConfig": {
+                    "defaults": {
+                        "links": []
+                    },
+                    "overrides": []
+                },
+                "fill": 1,
+                "fillGradient": 0,
+                "gridPos": {
+                    "h": 8,
+                    "w": 7,
+                    "x": 7,
+                    "y": 23
+                },
+                "hiddenSeries": false,
+                "id": 6,
+                "legend": {
+                    "avg": false,
+                    "current": false,
+                    "max": false,
+                    "min": false,
+                    "show": true,
+                    "total": false,
+                    "values": false
+                },
+                "lines": true,
+                "linewidth": 1,
+                "nullPointMode": "null",
+                "options": {
+                    "alertThreshold": true
+                },
+                "percentage": false,
+                "pluginVersion": "7.5.5",
+                "pointradius": 2,
+                "points": false,
+                "renderer": "flot",
+                "seriesOverrides": [],
+                "spaceLength": 10,
+                "stack": true,
+                "steppedLine": false,
+                "targets": [
+                    {
+                        "format": "time_series",
+                        "group": [],
+                        "metricColumn": "denominazione_regione",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  date_add(data, interval 18 hour) AS \"time\",\n  denominazione_provincia AS metric,\n  sum(totale_casi)\nFROM covid19.province\nwhere denominazione_regione='$Regione'\ngroup by denominazione_provincia, data\nORDER BY data, denominazione_provincia",
+                        "refId": "A",
+                        "select": [
+                            [
+                                {
+                                    "params": [
+                                        "value"
+                                    ],
+                                    "type": "column"
+                                }
+                            ]
+                        ],
+                        "table": "covid19.province",
+                        "timeColumn": "data",
+                        "where": []
+                    }
+                ],
+                "thresholds": [],
+                "timeFrom": null,
+                "timeRegions": [],
+                "timeShift": null,
+                "title": "Infected by Province (choosen Region)",
+                "tooltip": {
+                    "shared": true,
+                    "sort": 0,
+                    "value_type": "individual"
+                },
+                "type": "graph",
+                "xaxis": {
+                    "buckets": null,
+                    "mode": "time",
+                    "name": null,
+                    "show": true,
+                    "values": []
+                },
+                "yaxes": [
+                    {
+                        "format": "none",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    },
+                    {
+                        "format": "short",
+                        "label": null,
+                        "logBase": 1,
+                        "max": null,
+                        "min": null,
+                        "show": true
+                    }
+                ],
+                "yaxis": {
+                    "align": false,
+                    "alignLevel": null
+                }
+            }
+        ],
+        "refresh": false,
+        "schemaVersion": 27,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+            "list": [
+                {
+                    "allValue": null,
+                    "current": {},
+                    "datasource": "my2",
+                    "definition": "select distinct denominazione_regione from covid19.province",
+                    "description": null,
+                    "error": null,
+                    "hide": 0,
+                    "includeAll": false,
+                    "label": "Region",
+                    "multi": false,
+                    "name": "Regione",
+                    "options": [],
+                    "query": "select distinct denominazione_regione from covid19.province",
+                    "refresh": 1,
+                    "regex": "",
+                    "skipUrlSync": false,
+                    "sort": 0,
+                    "tagValuesQuery": "",
+                    "tags": [],
+                    "tagsQuery": "",
+                    "type": "query",
+                    "useTags": false
+                }
+            ]
+        },
+        "time": {
+            "from": "2020-02-22T23:00:00.000Z",
+            "to": "now"
+        },
+        "timepicker": {
+            "refresh_intervals": [
+                "5s",
+                "10s",
+                "30s",
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ]
+        },
+        "timezone": "",
+        "title": "TempCondition",
+        "uid": null,
+        "version": 4
+    },
+    "folderId": 7,
+    "message": "Made changes to TEST",
+    "overwrite": false
+}

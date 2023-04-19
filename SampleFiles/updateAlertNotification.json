@@ -1,0 +1,14 @@
+   {
+        "id": 2,
+        "uid": "new-alert-notification",
+        "name": "new alert",
+        "type": "email",
+        "isDefault": false,
+        "sendReminder": false,
+        "disableResolveMessage": false,
+        "frequency": "",
+        "settings": {
+            "addresses": "test@gmail.com"
+        },
+        "secureFields": {}
+    }

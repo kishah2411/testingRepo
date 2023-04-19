@@ -1,0 +1,10 @@
+{
+  "uid": "new-alert-notification", //optional
+  "name": "new alert notification",//required
+  "type":  "email",
+  "isDefault": false,
+  "sendReminder": false,
+  "settings": {
+    "addresses": "test@gmail.com"
+  }
+}

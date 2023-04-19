@@ -1,0 +1,11 @@
+{
+  "name": "Demo",
+  "type": "graphite",
+  "url": "http://mydatasource1.com",
+  "access": "proxy",
+  "basicAuth": true,
+  "basicAuthUser": "basicuser",
+  "secureJsonData": {
+    "basicAuthPassword": "basicpassword"
+  }
+}
